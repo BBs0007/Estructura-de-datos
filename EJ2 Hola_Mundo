@@ -1,0 +1,112 @@
+#pragma once
+
+namespace hola_Mundo1 {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Resumen de Form1
+	/// </summary>
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+	public:
+		Form1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: agregar código de constructor aquí
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Limpiar los recursos que se estén utilizando.
+		/// </summary>
+		~Form1()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::Button^  BtnMensaje;
+	protected: 
+	private: System::Windows::Forms::Label^  lblHola;
+	private: System::Windows::Forms::TextBox^  txtMensaje;
+
+	private:
+		/// <summary>
+		/// Variable del diseñador requerida.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido del método con el editor de código.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->BtnMensaje = (gcnew System::Windows::Forms::Button());
+			this->lblHola = (gcnew System::Windows::Forms::Label());
+			this->txtMensaje = (gcnew System::Windows::Forms::TextBox());
+			this->SuspendLayout();
+			// 
+			// BtnMensaje
+			// 
+			this->BtnMensaje->Location = System::Drawing::Point(173, 143);
+			this->BtnMensaje->Name = L"BtnMensaje";
+			this->BtnMensaje->Size = System::Drawing::Size(75, 23);
+			this->BtnMensaje->TabIndex = 0;
+			this->BtnMensaje->Text = L"Mensaje";
+			this->BtnMensaje->UseVisualStyleBackColor = true;
+			this->BtnMensaje->Click += gcnew System::EventHandler(this, &Form1::BtnMensaje_Click);
+			// 
+			// lblHola
+			// 
+			this->lblHola->AutoSize = true;
+			this->lblHola->Location = System::Drawing::Point(183, 109);
+			this->lblHola->Name = L"lblHola";
+			this->lblHola->Size = System::Drawing::Size(65, 13);
+			this->lblHola->TabIndex = 1;
+			this->lblHola->Text = L"Hola Mundo";
+			this->lblHola->Click += gcnew System::EventHandler(this, &Form1::lblHola_Click);
+			// 
+			// txtMensaje
+			// 
+			this->txtMensaje->Location = System::Drawing::Point(161, 60);
+			this->txtMensaje->Name = L"txtMensaje";
+			this->txtMensaje->Size = System::Drawing::Size(100, 20);
+			this->txtMensaje->TabIndex = 2;
+			this->txtMensaje->TextChanged += gcnew System::EventHandler(this, &Form1::txtMensaje_TextChanged);
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(478, 266);
+			this->Controls->Add(this->txtMensaje);
+			this->Controls->Add(this->lblHola);
+			this->Controls->Add(this->BtnMensaje);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	private: System::Void BtnMensaje_Click(System::Object^  sender, System::EventArgs^  e) {
+				 txtMensaje -> Text ="hola mundo";
+			 }
+	private: System::Void lblHola_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void txtMensaje_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	};
+}
+
